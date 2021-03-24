@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
+        <remap from="cloud_in" to="/depth_camera/depth/points"/>
+        <remap from="scan" to="/scan"/>
+        <rosparam>
+            min_height: 0.0
+            max_height: 4.0
+            angle_min: -1.57
+            angle_max: 1.57
+            range_min: 0.00
+            range_max: 10.00
+        </rosparam>
+
+    </node>
+
+</launch>
